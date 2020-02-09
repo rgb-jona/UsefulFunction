@@ -2,7 +2,7 @@ def RecursiveSearch(string, searchString):
     """This function returns all appearances of searchString in string and returns them as list"""
     stringIndex = string.find(searchString)
     if stringIndex >= 0:
-        # search for further appearances of searchString in string by recursively calling the RecursiveSearch funktion
+        # search for further appearances of searchString in string by recursively calling the RecursiveSearch function
         # with trimmed string from stringIndex+1 to end to prevent finding same string position as before again
         resultList = RecursiveSearch(string[stringIndex + 1:], searchString)
 
@@ -14,5 +14,8 @@ def RecursiveSearch(string, searchString):
         resultList.insert(0,stringIndex)
         return resultList
     else:
-        # returning this empty array so it can be filled with the results of the function calls before
+        # returning empty array so it can be filled with the results of the function calls before
         return []
+
+if __name__ == "__main__":
+    print(RecursiveSearch('this is a test','t'))
