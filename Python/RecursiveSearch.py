@@ -3,7 +3,7 @@ def RecursiveSearch(string, searchString):
     stringIndex = string.find(searchString)
     if stringIndex >= 0:
         # search for further appearances of searchString in string by recursively calling the RecursiveSearch function
-        # with trimmed string from stringIndex+1 to end to prevent finding same string position as before again
+        # with trimmed string from stringIndex+1 to end, to prevent finding same string as before again
         resultList = RecursiveSearch(string[stringIndex + 1:], searchString)
 
         # since the string was trimmed the stored indices need to be corrected
